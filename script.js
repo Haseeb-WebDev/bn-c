@@ -12,7 +12,10 @@ function signup() {
         .then(data => {
             document.getElementById('signup-message').innerText = data.message;
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            document.getElementById('signup-message').innerText = 'Error: Could not connect to server!';
+            console.error('Error:', error);
+        });
     } else {
         document.getElementById('signup-message').innerText = 'Please fill in all fields!';
     }
@@ -31,7 +34,10 @@ function login() {
     .then(data => {
         document.getElementById('login-message').innerText = data.message;
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        document.getElementById('login-message').innerText = 'Error: Could not connect to server!';
+        console.error('Error:', error);
+    });
 }
 
 function convertBinaryToDecimal() {
@@ -46,7 +52,10 @@ function convertBinaryToDecimal() {
         .then(data => {
             document.getElementById('decimal-output').innerText = `Decimal: ${data.decimal}`;
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            document.getElementById('decimal-output').innerText = 'Error: Could not connect to server!';
+            console.error('Error:', error);
+        });
     } else {
         document.getElementById('decimal-output').innerText = 'Invalid binary input!';
     }
@@ -64,7 +73,10 @@ function convertDecimalToBinary() {
         .then(data => {
             document.getElementById('binary-output').innerText = `Binary: ${data.binary}`;
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            document.getElementById('binary-output').innerText = 'Error: Could not connect to server!';
+            console.error('Error:', error);
+        });
     } else {
         document.getElementById('binary-output').innerText = 'Invalid decimal input!';
     }
